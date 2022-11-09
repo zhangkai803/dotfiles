@@ -10,6 +10,7 @@ require("plugins")
 -- 插件自定义配置
 require('plugin-config/nvim-tree')
 require('plugin-config/bufferline')
+require('plugin-config/telescope')
 
 -- LSP
 require('lsp/setup')

@@ -17,4 +17,23 @@ return require('packer').startup(function()
     -- lspconfig installer
     use({ "williamboman/mason.nvim" })
     use({ "williamboman/mason-lspconfig.nvim" })
+
+    -- telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    -- lualine
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = 'kyazdani42/nvim-web-devicons'
+	}
+
+	-- floating terminal
+	use 'akinsho/toggleterm.nvim'
+
+    -- treesitter
+    use 'nvim-treesitter/nvim-treesitter'
 end)
