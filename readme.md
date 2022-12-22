@@ -1,5 +1,5 @@
-# neovim
+# dotfiles
 
-插件管理：<https://github.com/wbthomason/packer.nvim>
+My personal dotfiles including:
 
-LSP DAP server 管理：<https://github.com/williamboman/mason.nvim>
+- [x] nvim

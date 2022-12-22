@@ -15,4 +15,5 @@ require('plugin-config/telescope')
 -- LSP
 require('lsp/setup')
 
-vim.cmd("colorscheme onedarkpro")
+-- 主题
+vim.cmd("colorscheme onedark")
