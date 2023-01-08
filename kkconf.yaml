@@ -1,0 +1,30 @@
+user:
+    name: kk
+    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ODksImV4cCI6MTY2NjY4OTU2MX0.WOsL0toI9bIWVHSDUfB3DT0pmRXpVDOmaaKaicxSoUI
+envs:
+    - source: wtm
+      deployment: wk-tag-manage
+      name: wk-tag-manage
+      namespace: dev1
+      type: api
+    - source: trs
+      deployment: wk-tag-manage
+      name: wk-tag-manage-tag-record-subscriber
+      namespace: dev1
+      type: script
+    - source: wcm
+      deployment: wk-content-manager
+      name: wk-content-manager
+      namespace: dev1
+      type: api
+    - source: cms-task
+      deployment: wk-miniprogram-cms
+      name: wk-miniprogram-cms-async-task
+      namespace: sit
+      type: script
+    - source: cms-sched
+      deployment: wk-miniprogram-cms
+      name: wk-miniprogram-cms-auto-scheduler
+      namespace: sit
+      type: script
+envmap: {}

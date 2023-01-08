@@ -2,6 +2,12 @@
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true }
 
+-- 设置空格为 leader
+vim.g.mapleader = " "
+
+-- 设置 jj 为 ESC
+map("i", "jj", "<ESC>", opt)
+
 -- 保存 Ctrl+s
 map("n", "<C-s>", ":w<CR>", opt)
 
@@ -16,6 +22,5 @@ map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 
 -- telescope
--- 文件查找 Ctrl+p
-map('n', '<SPACE>', ":Telescope<CR>", opt)
-map('n', '<C-p>', ":Telescope find_files<CR>", opt)
+-- 主面板 leader+t
+map('n', '<leader>t', ":Telescope<CR>", opt)
