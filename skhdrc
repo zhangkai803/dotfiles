@@ -77,7 +77,10 @@
 # ############################################################### #
 
 # focus window
-# alt - h : yabai -m window --focus west
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus wsouth
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
 
 # swap managed window
 # shift + alt - h : yabai -m window --swap north
@@ -89,7 +92,7 @@ shift + cmd - k : yabai -m window --warp north
 shift + cmd - l : yabai -m window --warp east
 
 # balance size of windows
-# shift + alt - 0 : yabai -m space --balance
+shift + cmd - 0 : yabai -m space --balance
 
 # make floating window fill screen
 # shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
@@ -146,4 +149,7 @@ alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle sticky(+float), topmost, picture-in-picture
 # alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
+
+# application shortcuts
+shift + cmd - return : open /Applications/iTerm.app
 
