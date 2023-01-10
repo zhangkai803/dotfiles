@@ -1,7 +1,3 @@
-#map <Left> <Nop>
-#map <Right> <Nop>
-#map <Up> <Nop>
-#map <Down> <Nop>
 imap <F6> <C-x><C-o>
 
 " vim-plug plugins "
