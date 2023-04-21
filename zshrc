@@ -16,6 +16,7 @@ export ZSH="/Users/k/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -113,6 +114,8 @@ tabs 4
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias abcdefghijklmnopqrstuvwxyz="echo 👍"
 
+alias gdh="git diff HEAD^ HEAD"
+
 alias pydep_install="pip install -i https://pypi:9LmOBdpxKQ3B@pypi.weike.fm/ --trusted-host pypi.weike.fm -r requirements.txt"
 alias notebook="cd ~/self/demo && env_demo && jupyter notebook"
 
@@ -121,15 +124,23 @@ alias sshpub="cat ~/.ssh/id_rsa.pub"
 
 alias proxy="export all_proxy=socks5://127.0.0.1:7891"
 
+alias log_cms_prod_cms_server="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_cms_prod_async_task="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms-async-task -ns iprod -t script -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_cms_prod_auto_scheduler="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms-auto-scheduler -ns iprod -t script -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_doc_prod_server="kklog -d wk-documents -e prod -n wk-documents -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_wk_prod_server="kklog -d main-weike -e prod -n main-weike -ns main-weike -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+
+alias aseprite="~/source_code/aseprite/build/bin/aseprite"
+
 # Init py venv alias
-# echo ">> Init pyenv alias."
-# echo ">> Env dir: ~/.virtualenv"
-# for dir in $(ls ~/.virtualenv)
-# do
-    # [ -d $dir ] && echo "alias env_$dir=\"source ~/.virtualenv/${dir}/bin/activate\"" #先判断是否是目录，然后再输出
-    # alias env_$dir="source ~/.virtualenv/${dir}/bin/activate" #先判断是否是目录，然后再输出
-# done
-# echo ">> Pyenv alias init complete."
+echo ">> Init pyenv alias."
+echo ">> Env dir: ~/.virtualenv"
+for dir in $(ls ~/.virtualenv)
+do
+    [ -d $dir ] && echo "alias env_$dir=\"source ~/.virtualenv/${dir}/bin/activate\"" #先判断是否是目录，然后再输出
+    alias env_$dir="source ~/.virtualenv/${dir}/bin/activate" #先判断是否是目录，然后再输出
+done
+echo ">> Pyenv alias init complete."
 # for dir in $(ls ~/.pyvirtualenv)
 # do
     # [ -d $dir ] && echo "alias env_$dir=\"source ~/.virtualenv/${dir}/bin/activate\"" #先判断是否是目录，然后再输出
@@ -161,21 +172,25 @@ export PATH="$HOME/go/bin:$PATH"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
+# php@7.2
+export PATH="/usr/local/Cellar/php@7.2/7.2.34_6/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/k/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/k/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/k/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/k/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+#__conda_setup="$('/Users/k/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/Users/k/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/Users/k/opt/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/Users/k/opt/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
 # <<< conda initialize <<<
+export PATH="/Users/k/opt/anaconda3/bin:$PATH"
+# <<< my conda initialize <<<
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
