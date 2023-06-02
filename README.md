@@ -9,3 +9,4 @@ My personal dotfiles including:
 - [x] yabai
 - [x] skhd
 - [x] kklog
+- [x] hammerspoon
