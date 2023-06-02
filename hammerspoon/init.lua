@@ -35,11 +35,14 @@ hs.hotkey.bind(hyper, "h", function () hs.notify.show("Hello world!", "welcome t
 hs.hotkey.bind(hyper, "r", function () hs.reload() end)
 -- toggle hs console
 hs.hotkey.bind(hyper, "c", function () hs.toggleConsole() end)
+-- incr audio vloume
 hs.hotkey.bind(hyper, 'up', changeVolume(3))
+-- decr audio vloume
 hs.hotkey.bind(hyper, 'down', changeVolume(-3))
 
 if spoon.ClipboardTool then
     spoon.ClipboardTool.hist_size = 100
+    spoon.ClipboardTool.show_copied_alert = false
     spoon.ClipboardTool.show_in_menubar = false
     spoon.ClipboardTool:start()
     spoon.ClipboardTool:bindHotkeys({
