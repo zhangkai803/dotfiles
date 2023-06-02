@@ -6,7 +6,7 @@ local hyper = {"ctrl", "alt", "cmd"}
 
 -- load spoons
 hs.loadSpoon("ModalMgr")
-hs.loadSpoon("ClipShow")
+hs.loadSpoon("ClipboardTool")
 
 -- functions
 local function test ()
@@ -38,6 +38,11 @@ hs.hotkey.bind(hyper, "c", function () hs.toggleConsole() end)
 hs.hotkey.bind(hyper, 'up', changeVolume(3))
 hs.hotkey.bind(hyper, 'down', changeVolume(-3))
 
-if spoon.ClipShow then
-    hs.hotkey.bind(hyper, "v", function () spoon.ClipShow.toggleShow() end)
+if spoon.ClipboardTool then
+    spoon.ClipboardTool.hist_size = 100
+    spoon.ClipboardTool.show_in_menubar = false
+    spoon.ClipboardTool:start()
+    spoon.ClipboardTool:bindHotkeys({
+        toggle_clipboard = {hyper, 'v'}
+    })
 end
