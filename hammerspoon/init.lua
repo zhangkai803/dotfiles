@@ -41,7 +41,7 @@ hs.hotkey.bind(hyper, 'up', changeVolume(3))
 hs.hotkey.bind(hyper, 'down', changeVolume(-3))
 
 if spoon.ClipboardTool then
-    spoon.ClipboardTool.hist_size = 100
+    spoon.ClipboardTool.hist_size = 10
     spoon.ClipboardTool.show_copied_alert = false
     spoon.ClipboardTool.show_in_menubar = false
     spoon.ClipboardTool:start()
