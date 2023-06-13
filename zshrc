@@ -129,6 +129,7 @@ alias log_cms_prod_async_task="kklog -d wk-miniprogram-cms -e prod -n wk-minipro
 alias log_cms_prod_auto_scheduler="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms-auto-scheduler -ns iprod -t script -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
 alias log_doc_prod_server="kklog -d wk-documents -e prod -n wk-documents -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
 alias log_wk_prod_server="kklog -d main-weike -e prod -n main-weike -ns main-weike -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_forecast_server="kklog -p dayou -d forecast -e prod -n forecast -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
 
 alias aseprite="~/source_code/aseprite/build/bin/aseprite"
 
@@ -172,8 +173,9 @@ export PATH="$HOME/go/bin:$PATH"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
-# php@7.2
-export PATH="/usr/local/Cellar/php@7.2/7.2.34_6/bin:$PATH"
+# php
+# export PATH="/usr/local/Cellar/php@7.2/7.2.34_6/bin:$PATH"
+export PATH="/usr/local/Cellar/php@7.4/7.4.33_2/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

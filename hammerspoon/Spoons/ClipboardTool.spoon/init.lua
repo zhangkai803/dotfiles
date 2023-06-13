@@ -430,7 +430,7 @@ end
 --- Parameters:
 ---  * None
 function obj:start()
-   obj.logger.level = 0
+   obj.logger.level = 3 -- ERROR,WARNING,INFO,DEBUG,VERBOSE=1,2,3,4,5
    clipboard_history = self:dedupe_and_resize(getSetting("items", {})) -- If no history is saved on the system, create an empty history
    last_change = pasteboard.changeCount() -- keeps track of how many times the pasteboard owner has changed // Indicates a new copy has been made
    self.selectorobj = hs.chooser.new(hs.fnutils.partial(self._processSelectedItem, self))
@@ -456,13 +456,24 @@ end
 --- Parameters:
 ---  * None
 function obj:showClipboard()
+   self.logger.i("obj:showClipboard call")
    if self.selectorobj ~= nil then
+
+      self.logger.i("selectorobj:refreshChoicesCallback call")
       self.selectorobj:refreshChoicesCallback()
+      self.logger.i("selectorobj:refreshChoicesCallback end")
+
+      self.logger.i("hs.window.focusedWindow call")
       self.prevFocusedWindow = hs.window.focusedWindow()
+      self.logger.i("hs.window.focusedWindow end")
+
+      self.logger.i("selectorobj:show call")
       self.selectorobj:show()
+      self.logger.i("selectorobj:show end")
    else
       hs.notify.show("ClipboardTool not properly initialized", "Did you call ClipboardTool:start()?", "")
    end
+   self.logger.i("obj:showClipboard end")
 end
 
 --- ClipboardTool:toggleClipboard()

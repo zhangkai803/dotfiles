@@ -1,6 +1,8 @@
 -- make undefined global to local
 local hs = hs
 
+local logger = hs.logger.new("zk", 3)
+
 -- hyper key
 local hyper = {"ctrl", "alt", "cmd"}
 
@@ -27,14 +29,12 @@ local function changeVolume (diff)
 end
 
 -- hotkeys
--- test
-hs.hotkey.bind(hyper, "t", function () test() end)
 -- greeting and test
-hs.hotkey.bind(hyper, "h", function () hs.notify.show("Hello world!", "welcome to hammerspoon", "") test() end)
+hs.hotkey.bind(hyper, "t", function () hs.notify.show("Hello world!", "welcome to hammerspoon", "") test() end)
 -- reload config
 hs.hotkey.bind(hyper, "r", function () hs.reload() end)
 -- toggle hs console
-hs.hotkey.bind(hyper, "c", function () hs.toggleConsole() end)
+hs.hotkey.bind(hyper, "c", function () logger.i("toggleConsole call") hs.toggleConsole() logger.i("toggleConsole end") end)
 -- incr audio vloume
 hs.hotkey.bind(hyper, 'up', changeVolume(3))
 -- decr audio vloume
