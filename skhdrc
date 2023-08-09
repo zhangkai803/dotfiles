@@ -139,7 +139,8 @@ shift + cmd - 0 : yabai -m space --balance
 
 # toggle window zoom
 # alt - d : yabai -m window --toggle zoom-parent
-alt - f : yabai -m window --toggle zoom-fullscreen
+# alt - f : yabai -m window --toggle zoom-fullscreen
+alt - f : yabai -m window --toggle float --grid 1:1:1:1:1:1
 
 # toggle window split type
 # alt - e : yabai -m window --toggle split
