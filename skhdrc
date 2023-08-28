@@ -77,19 +77,19 @@
 # ############################################################### #
 
 # focus window
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus wsouth
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+#alt - h : yabai -m window --focus west
+#alt - j : yabai -m window --focus wsouth
+#alt - k : yabai -m window --focus north
+#alt - l : yabai -m window --focus east
 
 # swap managed window
 # shift + alt - h : yabai -m window --swap north
 
 # move managed window
-shift + cmd - h : yabai -m window --warp west
-shift + cmd - j : yabai -m window --warp south
-shift + cmd - k : yabai -m window --warp north
-shift + cmd - l : yabai -m window --warp east
+#shift + cmd - h : yabai -m window --warp west
+#shift + cmd - j : yabai -m window --warp south
+#shift + cmd - k : yabai -m window --warp north
+#shift + cmd - l : yabai -m window --warp east
 
 # balance size of windows
 shift + cmd - 0 : yabai -m space --balance
@@ -141,6 +141,16 @@ shift + cmd - 0 : yabai -m space --balance
 # alt - d : yabai -m window --toggle zoom-parent
 # alt - f : yabai -m window --toggle zoom-fullscreen
 alt - f : yabai -m window --toggle float --grid 1:1:1:1:1:1
+
+# window split
+# left half
+alt - h : yabai -m window --toggle float --grid 4:4:0:0:2:4
+# top half
+alt - k : yabai -m window --toggle float --grid 4:4:0:0:4:2
+# down half
+alt - j : yabai -m window --toggle float --grid 4:4:0:2:4:2
+# right half
+alt - l : yabai -m window --toggle float --grid 4:4:2:0:4:4
 
 # toggle window split type
 # alt - e : yabai -m window --toggle split
