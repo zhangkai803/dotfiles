@@ -36,9 +36,9 @@ hs.hotkey.bind(hyper, "r", function () hs.reload() end)
 -- toggle hs console
 hs.hotkey.bind(hyper, "c", function () logger.i("toggleConsole call") hs.toggleConsole() logger.i("toggleConsole end") end)
 -- incr audio vloume
-hs.hotkey.bind(hyper, 'up', changeVolume(3))
+hs.hotkey.bind(hyper, 'up', changeVolume(5))
 -- decr audio vloume
-hs.hotkey.bind(hyper, 'down', changeVolume(-3))
+hs.hotkey.bind(hyper, 'down', changeVolume(-5))
 
 if spoon.ClipboardTool then
     spoon.ClipboardTool.hist_size = 10
