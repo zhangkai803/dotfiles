@@ -174,8 +174,8 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
 # php
-# export PATH="/usr/local/Cellar/php@7.2/7.2.34_6/bin:$PATH"
-export PATH="/usr/local/Cellar/php@7.4/7.4.33_2/bin:$PATH"
+# export PATH="/usr/local/Cellar/php@7.2/7.2.34_10/bin:$PATH"
+export PATH="/usr/local/Cellar/php@7.4/7.4.33_5/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
