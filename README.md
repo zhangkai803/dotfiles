@@ -13,14 +13,14 @@ My personal dotfiles including:
 
 ## Sync Configuration
 
-- `vim`: `make vim`
-- `nvim`: `make nvim`
-- `zsh`: `make zsh`
-- `p10k`: `make p10k`
-- `yabai`: `make yabai`
-- `skhd`: `make skhd`
-- `kklog`: `make kklog`
-- `hammerspoon`: `make hammerspoon`
+- `vim`: `make install t=vim`
+- `nvim`: `make install t=nvim`
+- `zsh`: `make install t=zsh`
+- `p10k`: `make install t=p10k`
+- `yabai`: `make install t=yabai`
+- `skhd`: `make install t=skhd`
+- `kklog`: `make install t=kklog`
+- `hammerspoon`: `make install t=hammerspoon`
 
 ## Setup Zsh && p10k
 

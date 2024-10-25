@@ -115,6 +115,7 @@ tabs 4
 alias abcdefghijklmnopqrstuvwxyz="echo 👍"
 
 alias gdh="git diff HEAD^ HEAD"
+alias sit="gco sit && gpr"
 
 alias pydep_install="pip install -i https://pypi:9LmOBdpxKQ3B@pypi.weike.fm/ --trusted-host pypi.weike.fm -r requirements.txt"
 alias notebook="cd ~/self/demo && env_demo && jupyter notebook"
@@ -122,14 +123,20 @@ alias notebook="cd ~/self/demo && env_demo && jupyter notebook"
 alias win11="prlctl start \"Windows 11\""
 alias sshpub="cat ~/.ssh/id_rsa.pub"
 
-alias proxy="export all_proxy=socks5://127.0.0.1:7891"
+alias proxy="export https_proxy=http://127.0.0.1:7891;export http_proxy=http://127.0.0.1:7891;export all_proxy=socks5://127.0.0.1:7891"
+proxy
 
-alias log_cms_prod_cms_server="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
-alias log_cms_prod_async_task="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms-async-task -ns iprod -t script -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
-alias log_cms_prod_auto_scheduler="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms-auto-scheduler -ns iprod -t script -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
-alias log_doc_prod_server="kklog -d wk-documents -e prod -n wk-documents -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
-alias log_wk_prod_server="kklog -d main-weike -e prod -n main-weike -ns main-weike -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
-alias log_forecast_server="kklog -p dayou -d forecast -e prod -n forecast -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_prod_matrix_proxy="kklog -d matrix-proxy -e prod -n matrix-proxy -ns matrix -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_prod_cms_server="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_prod_async_task="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms-async-task -ns iprod -t script -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_prod_auto_scheduler="kklog -d wk-miniprogram-cms -e prod -n wk-miniprogram-cms-auto-scheduler -ns iprod -t script -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_prod_document_server="kklog -d wk-documents -e prod -n wk-documents -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_prod_weike_server="kklog -d main-weike -e prod -n main-weike -ns main-weike -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_prod_forecast_server="kklog -p dayou -d forecast -e prod -n forecast -ns iprod -t api -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias log_prod_aigc="kklog -p weike -d matrix-aigc -e prod -n matrix-aigc-gen-answer -ns matrix -t script -l 2000 2> /tmp/kklog_grep_buf_`date +%s` | tail -f /tmp/kklog_grep_buf_`date +%s`"
+alias 说实话="ssh"
+alias ldap="echo ymT7u56qKp#J#7yz"
+alias cms="ssh cms"
 
 alias aseprite="~/source_code/aseprite/build/bin/aseprite"
 
@@ -153,6 +160,7 @@ echo ">> Pyenv alias init complete."
 #echo "-------------------------------------------------------"
 
 # ### my conf ###
+HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 # mysql
 export PATH=/usr/local/mysql/bin:$PATH
 # node
@@ -166,7 +174,7 @@ export LDFLAGS="-L/usr/local/opt/zlib/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include"
 export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 # pypy
-export PATH="$HOME/opt/pypy3.7-v7.3.7-osx64/bin:$PATH"
+# export PATH="$HOME/opt/pypy3.7-v7.3.7-osx64/bin:$PATH"
 # go
 export PATH="$HOME/go/bin:$PATH"
 # java
@@ -175,25 +183,35 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
 export PATH="$HOME/.local/bin:$PATH"
 # php
 # export PATH="/usr/local/Cellar/php@7.2/7.2.34_10/bin:$PATH"
-export PATH="/usr/local/Cellar/php@7.4/7.4.33_5/bin:$PATH"
+export PATH="/usr/local/Cellar/php@7.4/7.4.33_6/bin:$PATH"
+# rust
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/k/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/Users/k/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/k/opt/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/Users/k/opt/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
+__conda_setup="$('/Users/k/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/k/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/k/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/k/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
-export PATH="/Users/k/opt/anaconda3/bin:$PATH"
+#export PATH="/Users/k/opt/anaconda3/bin:$PATH"
 # <<< my conda initialize <<<
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export CC="clang -target arm64"
+
+# Fix runtime/cgo for golang
+export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
+export CGO_ENABLED=1
+export CC=gcc
 

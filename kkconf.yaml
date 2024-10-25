@@ -1,30 +1,66 @@
 user:
-    name: kk
-    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ODksImV4cCI6MTY2NjY4OTU2MX0.WOsL0toI9bIWVHSDUfB3DT0pmRXpVDOmaaKaicxSoUI
+    name: k
+    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ODksImV4cCI6MTczMDg2MTM0Nn0.lsIu1kSV2Ef1xBao6Fp5vX13RWUASyH1LqvOoNWOf9k
 envs:
-    - source: wtm
-      deployment: wk-tag-manage
-      name: wk-tag-manage
-      namespace: dev1
+    - source: oca
+      project: oc
+      deployment: wk-oca
       type: api
-    - source: trs
-      deployment: wk-tag-manage
-      name: wk-tag-manage-tag-record-subscriber
+      name: wk-oca
       namespace: dev1
-      type: script
-    - source: wcm
-      deployment: wk-content-manager
-      name: wk-content-manager
-      namespace: dev1
+    - source: eco-pay-tokyo
+      project: oc
+      deployment: wk-ecommerce-pay-tokyo
       type: api
-    - source: cms-task
-      deployment: wk-miniprogram-cms
-      name: wk-miniprogram-cms-async-task
+      name: wk-ecommerce-pay-tokyo
+      namespace: dev1
+    - source: form
+      project: weike
+      deployment: wk-form
+      type: api
+      name: wk-form
+      namespace: dev1
+    - source: oc
+      project: oc
+      deployment: wk-oc
+      type: api
+      name: wk-oc
+      namespace: dev1
+    - source: oc-forecast
+      project: oc
+      deployment: forecast-overseas
+      type: api
+      name: forecast-overseas
       namespace: sit
-      type: script
-    - source: cms-sched
-      deployment: wk-miniprogram-cms
-      name: wk-miniprogram-cms-auto-scheduler
+    - source: forecast
+      project: dayou
+      deployment: forecast
+      type: api
+      name: forecast
       namespace: sit
+    - source: aigc
+      project: weike
+      deployment: matrix-aigc
+      type: api
+      name: matrix-aigc
+      namespace: matrix-dev2
+    - source: aigc-gen-answer
+      project: weike
+      deployment: matrix-aigc
       type: script
+      name: matrix-aigc-gen-answer
+      namespace: matrix-dev2
+    - source: css
+      project: weike
+      deployment: wk-css
+      type: api
+      name: wk-css
+      namespace: matrix-dev1
+    - source: css-nats
+      project: weike
+      deployment: wk-css
+      type: script
+      name: wk-css-kf-msg-or-event
+      namespace: matrix-dev1
 envmap: {}
+default_source: ""
