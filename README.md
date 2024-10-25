@@ -11,7 +11,7 @@ My personal dotfiles including:
 - [x] kklog
 - [x] hammerspoon
 
-## Sync Configuration
+## Install Configuration
 
 - `vim`: `make install t=vim`
 - `nvim`: `make install t=nvim`
@@ -21,6 +21,17 @@ My personal dotfiles including:
 - `skhd`: `make install t=skhd`
 - `kklog`: `make install t=kklog`
 - `hammerspoon`: `make install t=hammerspoon`
+
+## Sync Configuration From Local
+
+- `vim`: `make sync t=vim`
+- `nvim`: `make sync t=nvim`
+- `zsh`: `make sync t=zsh`
+- `p10k`: `make sync t=p10k`
+- `yabai`: `make sync t=yabai`
+- `skhd`: `make sync t=skhd`
+- `kklog`: `make sync t=kklog`
+- `hammerspoon`: `make sync t=hammerspoon`
 
 ## Setup Zsh && p10k
 
